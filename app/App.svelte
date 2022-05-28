@@ -1,4 +1,7 @@
 <script lang="typescript">
+	import Leaderboard from "./Leaderboard.svelte";
+	import { navigate } from "svelte-native";
+
 	let message: string = "Blank Svelte Native App";
 </script>
 
@@ -6,29 +9,24 @@
 	<!-- <actionBar title="Rithem" /> -->
 	<actionBar title="ActionBar Title">
 		<gridLayout>
+			<button
+				class="material-icons action-bar-button"
+				on:tap={() => navigate({ page: Leaderboard })}
+				>leaderboard</button
+			>
 			<label
 				text="RithemBoards"
 				fontSize="24"
 				verticalAlignment="center"
 			/>
-			<button class="material-icons action-bar-button">leaderboard</button
-			>
+			<!-- <button class="material-icons action-bar-button">search</button> -->
 		</gridLayout>
 	</actionBar>
 
 	<gridLayout>
 		<!-- svelte-ignore a11y-label-has-associated-control -->
-		<label
-			class="info"
-			horizontalAlignment="center"
-			verticalAlignment="middle"
-			textWrap="true"
-		>
-			<formattedString>
-				<span class="fas" text="&#xf135;" />
-				<span text=" {message}" />
-			</formattedString>
-		</label>
+		<!-- <a href="yes">Yo</a> -->
+		<label text="Main" fontSize="50" verticalAlignment="center" />
 	</gridLayout>
 </page>
 
@@ -42,7 +40,7 @@
 
 	.action-bar-button {
 		font-size: 24;
-		background: red;
+		/* background: red; */
 		width: 90px;
 		height: 90px;
 		border-radius: 80px;
